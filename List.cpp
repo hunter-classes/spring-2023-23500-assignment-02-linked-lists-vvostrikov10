@@ -80,3 +80,21 @@ bool List::contains(std::string item){
     return false;
 
 }
+
+void List::remove(int loc){
+    Node *walker, *trailer;
+    walker = head;
+    trailer = nullptr;
+    while(loc>0 && walker != nullptr){
+        loc--;
+
+        trailer = walker;
+        walker = walker -> getNext();
+    }
+
+    if (loc > 0){
+        throw std::out_of_range("Our insert is out of range");
+    }
+    trailer->setNext(walker->getNext());
+    delete(walker);
+}

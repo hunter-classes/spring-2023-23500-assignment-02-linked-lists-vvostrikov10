@@ -28,7 +28,8 @@ int main(){
     l->insert("1");
     l->insert("2");
     l->insert(1,"3");
-
+    l->remove(1);
     std::cout << l->toString() << "\n";
+
    
 }

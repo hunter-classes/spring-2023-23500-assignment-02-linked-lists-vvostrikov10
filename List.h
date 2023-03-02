@@ -14,6 +14,7 @@ class List{
         int length(); 
         std::string get(int loc);
         bool contains(std::string item);
+        void remove(int loc);
 
 
         /*
