@@ -15,14 +15,6 @@ class List{
         std::string get(int loc);
         bool contains(std::string item);
         void remove(int loc);
-
-
-        /*
         ~List();
-
-
-        void remove(int loc);
-
-
-    */
+    
 };

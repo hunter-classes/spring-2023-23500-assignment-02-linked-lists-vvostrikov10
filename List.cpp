@@ -6,11 +6,23 @@ List::List(){
     head = nullptr;
 }
 
+List::~List(){
+    Node *walker = head;
+    Node *trailer = nullptr;
+    while (walker != nullptr){
+        trailer = walker;
+        walker = walker ->getNext();
+        delete trailer;
+    }
+    
+}
+
 void List::insert(std::string data){
     Node *tmp = new Node(data);
     tmp->setNext(head);
     head = tmp;
 }
+
 
 std::string List::toString(){
     Node *tmp = head;
@@ -92,9 +104,17 @@ void List::remove(int loc){
         walker = walker -> getNext();
     }
 
-    if (loc > 0){
-        throw std::out_of_range("Our insert is out of range");
+    if (walker == nullptr){
+        throw std::out_of_range("Our remove is out of range");
     }
-    trailer->setNext(walker->getNext());
-    delete(walker);
+    
+    if (trailer == nullptr){
+        head = walker->getNext();
+    }
+    else{
+        trailer->setNext(walker->getNext());
+        delete(walker);
+    }
+    return;
 }
+

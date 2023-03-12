@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Node.h"
 #include "List.h"
+#include "IntNode.h"
+#include "OList.h"
 
 int main(){
     Node *n1;
@@ -31,5 +33,11 @@ int main(){
     l->remove(1);
     std::cout << l->toString() << "\n";
 
-   
+    OList *ol = new OList();
+    ol->insert(2);
+    ol->insert(1);
+    ol->insert(3);
+    std::cout << ol->toString() << "\n";
+    ol->reverse();
+    std::cout << ol->toString() << "\n";
 }
