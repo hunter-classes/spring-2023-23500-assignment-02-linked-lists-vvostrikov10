@@ -12,7 +12,8 @@ OList::~OList(){
         trailer = walker;
         walker = walker ->getNext();
         delete trailer;
-    }   
+    }
+    head = nullptr;
 }
 
 void OList::insert(int data){
@@ -48,6 +49,7 @@ std::string OList::toString(){
 bool OList::contains(int item){
     IntNode *tmp = head;
     while(tmp != nullptr && tmp->getData() <= item){
+        std::cout << item << ":" << tmp->getData() << "\n";
         if(tmp->getData() == item) return true;
         tmp = tmp->getNext();
     }

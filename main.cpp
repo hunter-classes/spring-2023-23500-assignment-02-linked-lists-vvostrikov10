@@ -34,10 +34,17 @@ int main(){
     std::cout << l->toString() << "\n";
 
     OList *ol = new OList();
-    ol->insert(2);
-    ol->insert(1);
-    ol->insert(3);
+    OList *test = new OList();
+    test->insert(4);
+    test->insert(2);
+    test->insert(3);
+    test->insert(5);
+    std::cout << "\n";
+    std::cout << test->contains(3) << "\n";
     std::cout << ol->toString() << "\n";
     ol->reverse();
+    OList *ol2 = new OList();
+    ol2->insert()
     std::cout << ol->toString() << "\n";
+    delete(ol);
 }
